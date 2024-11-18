@@ -244,6 +244,13 @@ export default function Home() {
         return dx;
     }
 
+    /**
+     *  calc buy token
+     * @param dx
+     * @param virtualSolReserves
+     * @param virtualTokenReserves
+     * @returns the token will get
+     */
     function calc_buy_for_dy(
         dx: BN,
         virtualSolReserves: BN,
@@ -257,11 +264,16 @@ export default function Home() {
         return dy;
     }
 
+    /**
+     * calc the market price
+     * @param virtualSolReserves
+     * @param virtualTokenReserves
+     * @returns
+     */
     function calc_market_price(
         virtualSolReserves: BN,
         virtualTokenReserves: BN
     ): number {
-        const market_price = 0.1234;
         let p = virtualSolReserves
             .mul(new BN(10000000000))
             .div(virtualTokenReserves);
@@ -269,6 +281,14 @@ export default function Home() {
         return price;
     }
 
+    /**
+     *
+     * calc sell token
+     * @param dy the token amount to buy
+     * @param virtualSolReserves
+     * @param virtualTokenReserves
+     * @returns
+     */
     function calc_sell_for_dx(
         dy: BN,
         virtualSolReserves: BN,
@@ -329,7 +349,9 @@ export default function Home() {
             liquidityPoolPDA
         );
         // console.log(accInfo);
-        console.log("=====================当前变量信息==============================");
+        console.log(
+            "=====================当前变量信息=============================="
+        );
         console.log("totalSupply: ", accInfo.totalSupply.toString());
         // console.log("reserveToken: ", accInfo.reserveToken); // BN 类型
         console.log("virtualTokenReserves: ", accInfo.reserveToken.toString());
@@ -343,8 +365,6 @@ export default function Home() {
                 .toString()
         );
         console.log("===================================================");
-
-
 
         return {
             virtualSolReserves: accInfo.reserveSol,
