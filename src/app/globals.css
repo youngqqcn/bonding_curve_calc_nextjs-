@@ -1,0 +1,101 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+.url-input {
+    width: 600px;
+    height: 25px;
+    font-size: 14px; /* 可选：增加字体大小 */
+    padding: 2px; /* 可选：添加内边距 */
+}
+
+.large-input {
+    min-width: 200px;
+    max-width: 600px;
+    height: 25px;
+    font-size: 14px; /* 可选：增加字体大小 */
+    padding: 2px; /* 可选：添加内边距 */
+}
+
+.my-table {
+    /* border-collapse:; */
+    /* width: 100%; */
+    border-spacing: 0;
+}
+
+.my-table th,
+.my-table td {
+    border: 0.1px solid rgb(114, 109, 109);
+    /* padding: 0; */
+    text-align: left;
+    /* margin: -1px 0 0 -1px; */
+    background-color: rgb(230, 230, 230);
+}
+
+.my-button {
+    background-color: #ffffff;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid rgb(74, 12, 245);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.my-button:hover {
+    background-color: #ccd5f1;
+}
+
+/**************/
+.my-input-container {
+    position: relative;
+    display: inline-block;
+    /* width: 500px; */
+    margin-right: 50px;
+}
+
+.my-input {
+    padding-right: 50px; /*为标签留出空间*/
+    width: 200px;
+    height: 30px;
+    right: 50px;
+    font-size: 15px; /* 可选：增加字体大小 */
+    padding: 2px; /* 可选：添加内边距 */
+}
+
+.currency-label {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-60%);
+    color: #888;
+}
